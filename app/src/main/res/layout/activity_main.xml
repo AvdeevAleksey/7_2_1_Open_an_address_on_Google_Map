@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/pathEditTextName"
+        android:id="@+id/pathEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/find_string_by_name"
@@ -15,24 +15,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <EditText
-        android:id="@+id/pathEditTextCoordinatesX"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="@string/find_string_by_coordinates"
-        app:layout_constraintBottom_toTopOf="@id/btnSearch"
-        app:layout_constraintLeft_toRightOf="@id/pathEditTextCoordinatesY"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/pathEditTextName"/>
-    <EditText
-        android:id="@+id/pathEditTextCoordinatesY"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="@string/find_string_by_coordinates"
-        app:layout_constraintBottom_toTopOf="@id/btnSearch"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/pathEditTextCoordinatesX"
-        app:layout_constraintTop_toBottomOf="@id/pathEditTextName"/>
+
     <Button
         android:id="@+id/btnSearch"
         android:layout_width="wrap_content"
@@ -41,6 +24,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/pathEditTextCoordinatesX"/>
+        app:layout_constraintTop_toBottomOf="@id/pathEditText"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

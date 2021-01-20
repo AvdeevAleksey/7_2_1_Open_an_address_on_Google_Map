@@ -15,20 +15,35 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final EditText pathTextName = findViewById(R.id.pathEditTextName);
-        EditText coordinateX = findViewById(R.id.pathEditTextCoordinatesX);
-        EditText coordinateY = findViewById(R.id.pathEditTextCoordinatesY);
+        final EditText pathTextName = findViewById(R.id.pathEditText);
         Button searchBtn = findViewById(R.id.btnSearch);
         searchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
-                if (!pathTextName.getText().toString().equals("")) {
+                String searchText = pathTextName.getText().toString();
+                if (!searchText.equals("") && (searchLetter(searchText))) {
                     Uri uri = Uri.parse("geo:?q=" + pathTextName.getText().toString());
                     intent.setData(uri);
+                } else {
+                    String[] coordinates = searchText.split(",");
+                    Uri uri = Uri.parse("geo:" + coordinates[0] + "," + coordinates[1]);
+                    intent.setData(uri);
                 }
-                
+                startActivity(intent);
             }
         });
+    }
+
+    public boolean searchLetter(String string) {
+        char[] chars = string.toCharArray();
+        Boolean result = false;
+        for (int i = 0; result; i++) {
+            result = Character.isLetter(chars[i]);
+            if (result) {
+                return true;
+            }
+        }
+        return false;
     }
 }
