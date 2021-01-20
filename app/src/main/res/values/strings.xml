@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">7_2_1_Open_an_address_on_Google_Map</string>
     <string name="btn_search">Ищем</string>
-    <string name="find_string_by_name">Ведите наименование объекта или координаты через запятую</string>
+    <string name="find_string_by_name">Объект или координаты через запятую</string>
 </resources>

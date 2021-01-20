@@ -10,20 +10,21 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
+    private EditText pathTextName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final EditText pathTextName = findViewById(R.id.pathEditText);
+        pathTextName = findViewById(R.id.pathEditText);
         Button searchBtn = findViewById(R.id.btnSearch);
         searchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_VIEW);
                 String searchText = pathTextName.getText().toString();
-                if (!searchText.equals("") && (searchLetter(searchText))) {
-                    Uri uri = Uri.parse("geo:?q=" + pathTextName.getText().toString());
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                if (searchText.length()>0) {
+                    Uri uri = Uri.parse("geo:?q=" + searchText);
                     intent.setData(uri);
                 } else {
                     String[] coordinates = searchText.split(",");
