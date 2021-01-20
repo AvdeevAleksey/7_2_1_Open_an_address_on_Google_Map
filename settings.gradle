@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "7_2_1_Open_an_address_on_Google_Map"
